@@ -1,38 +1,109 @@
-.App {
+.app {
   text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #333;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.score-board {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.score {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.status {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #e9e9e9;
+  border-radius: 5px;
+}
+
+.board {
+  margin: 20px auto;
+  display: inline-block;
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  font-size: 36px;
+  font-weight: bold;
+  border: 2px solid #333;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.square:hover {
+  background-color: #f9f9f9;
+}
+
+.square:disabled {
+  cursor: default;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.reset-btn {
+  background-color: #4CAF50;
+  border: none;
   color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.reset-btn:hover {
+  background-color: #45a049;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.reset-btn:last-child {
+  background-color: #f44336;
+}
+
+.reset-btn:last-child:hover {
+  background-color: #da190b;
+}
+
+@media (max-width: 480px) {
+  .square {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .score-board {
+    flex-direction: column;
+    gap: 10px;
   }
 }
